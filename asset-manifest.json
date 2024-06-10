@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Collaborative-WhiteBoard/static/css/main.8b17c6ac.css",
+    "main.js": "/Collaborative-WhiteBoard/static/js/main.a6be5019.js",
+    "static/js/453.bb5274c9.chunk.js": "/Collaborative-WhiteBoard/static/js/453.bb5274c9.chunk.js",
+    "index.html": "/Collaborative-WhiteBoard/index.html",
+    "main.8b17c6ac.css.map": "/Collaborative-WhiteBoard/static/css/main.8b17c6ac.css.map",
+    "main.a6be5019.js.map": "/Collaborative-WhiteBoard/static/js/main.a6be5019.js.map",
+    "453.bb5274c9.chunk.js.map": "/Collaborative-WhiteBoard/static/js/453.bb5274c9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8b17c6ac.css",
+    "static/js/main.a6be5019.js"
+  ]
+}
