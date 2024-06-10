@@ -1,0 +1,230 @@
+#root {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+
+    #whiteboard-container {
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        background-color: #15130D;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        overflow: none;
+
+        .undo-redo-btns {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            display: flex;
+            justify-content: space-between;
+            width: 100px;
+            z-index: 1;
+
+            svg {
+                cursor: pointer;
+                width: 30px;
+                height: 30px;
+                z-index: 1;
+
+                path {
+                    fill: white;
+                }
+            }
+        }
+
+        .pop-up {
+            position: absolute;
+            width: 25rem;
+            height: 15rem;
+            border: 1px solid black;
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 10;
+            transition: none;
+            box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+            background-color: #ccc;
+
+            &.hidden {
+                display: none;
+            }
+
+            .close-btn {
+                position: absolute;
+                top: 5px;
+                right: 5px;
+                cursor: pointer;
+                z-index: 1;
+                // gradient black
+                background: transparent;
+                font-size: 1rem;
+                padding: 0.5rem;
+                border-radius: 50%;
+                width: 30px;
+                text-align: center;
+                font-weight: bold;
+
+                &:hover {
+                    // gradient black
+                    background: linear-gradient(135deg, #000 0%, #111111 50%, #414141 100%);
+                    color: white;
+                }
+
+            }
+
+            .image-save-options {
+                display: flex;
+                justify-content: space-between;
+                width: 80%;
+                margin-top: 1rem;
+
+                button {
+                    width: 40%;
+                    height: 2rem;
+                    border: none;
+                    border-radius: 5px;
+                    background-color: #15130D;
+                    color: white;
+                    cursor: pointer;
+
+                    &:hover {
+                        // gradient black
+                        background: linear-gradient(135deg, #000 0%, #111111 50%, #414141 100%);
+                        color: white;
+                    }
+
+                    &:active {
+                        background-color: #414141;
+                    }
+                }
+            }
+        }
+
+        .toolbar {
+            position: absolute;
+            display: flex;
+            top: 25%;
+            left: -30px;
+            width: 50px;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            transition: left 0.5s;
+            z-index: 1;
+            background-color: #ccc;
+            border-radius: 10px;
+
+            &:hover {
+                left: 0;
+            }
+
+            .color-options {
+                display: flex;
+                flex-direction: column;
+
+                button {
+                    cursor: pointer;
+                    width: 30px;
+                    height: 30px;
+                    margin: 0.5rem;
+                    border: none;
+                    border-radius: 50%;
+                    background-color: white;
+                    border: 1px solid #15130D;
+                }
+
+                input.custom-color-picker {
+                    cursor: pointer;
+                    width: 30px;
+                    height: 30px;
+                    margin: 0.5rem;
+                    border: none;
+                    border-radius: 50%;
+                    // colorful gradient
+                    background-color: radial-gradient(50% 50% at 50% 50%, #ffffff 0%, transparent 100%), conic-gradient(from 0deg at 50% 50%, red, #ffa800 47.73deg, #ff0 79.56deg, #0f0 121.33deg, #0ff 180.99deg, #00f 238.67deg, #f0f 294.36deg, red 360deg), #c4c4c4 0%, #c4c4c4 100%;
+                    border: 1px solid #15130D;
+                }
+            }
+
+            .brush-size {
+                cursor: pointer;
+                width: 30px;
+                height: 30px;
+                margin: 0.5rem;
+
+                svg {
+                    width: 30px;
+                    height: 30px;
+                }
+
+                input {
+                    display: none;
+                    position: absolute;
+                    transform: rotate(-90deg);
+                    width: 200px;
+                    height: 10px;
+                    margin: 0.5rem;
+                    left: -30px;
+                    top: 275px;
+                }
+            }
+        }
+
+        .save-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            z-index: 1;
+            // save green gradient
+            background: linear-gradient(135deg, #00ff00 0%, #00ff00 50%, #00ff00 100%);
+            font-size: 1rem;
+            padding: 0.5rem;
+            border-radius: 25px;
+            width: 120px;
+            text-align: center;
+            font-weight: bold;
+            color: white;
+            border: 1px solid #15130D;
+
+            &:hover {
+                // increase brightness
+                filter: brightness(.8);
+            }
+
+            &:active {
+                background-color: #414141;
+            }
+        }
+
+        .Canvas-Container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 85%;
+            overflow: auto;
+            overflow-y: scroll;
+            scrollbar-width: thin;
+
+            #whiteboard {
+                position: relative;
+                background-color: white;
+                overflow: auto;
+            }
+        }
+    }
+}
